@@ -1,31 +1,36 @@
 #include <stdio.h>
 
 /**
- *main - Start of program execution
+ *main - Start of execution
  *
  *Return: 0(Success)
 */
 int main(void)
 {
-	int num;
-
 	/*
-	 *loop for numbers 0-9
-	 *if number is 0-9, print number
-	 *then if number is 0-8, add comma plus space
-	 *else if number is 9, add only space
+	 *for numbers 0-9
+	 *
 	 */
-	for (num = '0'; num <= '9'; num++)
-		if (num >= '0')
+	int a;
+	int b;
+	int c;
+
+	for (a = '0'; a <= '9'; a++)
+	{
+		for(b = '0'; b <= '9'; b++)
 		{
-			putchar(num);
-			if (num >= '0' && num <= '8')
+			if (a != b && b > a)
 			{
-				putchar(',');
-				putchar(' ');
+				putchar(a);
+				putchar(b);
+				if (a == '8' && b == '9')
+					putchar('\n');
+				else
+				{
+					putchar(',');
+					putchar(' ');
+				}
 			}
-			else
-				putchar('\n');
 		}
-	return (0);
+	}
 }
