@@ -1,16 +1,22 @@
-include <stdio.h>
-
+#include <stdio.h>
 /**
- *main - Start of program execution
  *
- *Return: 0(Success)
+ *Return: Always 0 (Success/correct)
  */
-int main(void)
-{
-	char alpha;
 
-	for (alpha = 'z'; alpha >= 'a'; alpha--)
-		putchar(alpha);
-	putchar('\n');
-	return (0);
+int main(void)
+
+{
+char alphabet;
+
+for (alphabet = 122 ; alphabet >= 97; alphabet--)
+{
+putchar(alphabet) ;
+}
+
+putchar('\n');
+
+return (0);
+
+
 }
