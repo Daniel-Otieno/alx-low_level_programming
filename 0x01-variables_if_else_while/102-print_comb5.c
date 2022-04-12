@@ -1,44 +1,41 @@
 #include <stdio.h>
-
 /**
- *main - Start of program execution
+ *main - Prints 3 combination of numbers
  *
- *Return: 0(Success)
+ *Return: Always (Success)
  */
 int main(void)
 {
-	int a;
-	int b;
-	int c;
-	int d;
-
-	for (a = '0'; a <= '9'; a++)
-	{
-		for (b = '0'; b <= '9'; b++)
-		{
-			for (c = '0'; c <= '9'; c++)
-			{
-				for (d = '0'; d <= '9'; d++)
-				{
-					if (b == c && a == d)
-					{
-						putchar(a);
-						putchar(b);
-						putchar(' ');
-						putchar(c);
-						putchar(d);
-						if (a == '9' && b == '8' &&
-						    c == 9 && d == '9')
-							putchar('\n');
-						else
-						{
-							putchar(',');
-							putchar(' ');
-						}
-					}
-			        }
-			}
-		}
-	}
-	return (0);
+int c, i, k, j;
+for (c = 48; c <= 57; c++)
+{
+for (i = 48; i <= 57; i++)
+{
+for (k = 48; k <= 57; k++)
+{
+for (j = 48; j <= 57; j++)
+{
+if (((k + j) > (c + i) &&  k >= c) || c < k)
+{
+putchar(c);
+putchar(i);
+putchar(' ');
+putchar(k);
+putchar(j);
+if (c + i + k + j == 227 && c == 57)
+{
+break;
+}
+else
+{
+putchar(',');
+putchar(' ');
+}
+}
+}
+}
+}
+}
+putchar('\n');
+return (0);
 }
