@@ -2,52 +2,47 @@
 
 /**
  *print_times_table - prints tables 1 to n
- *@n: the number of tables to be printed
  *
  *Return: void
 */
 void print_times_table(int n)
 {
-	int i, j, k, product;
-	j = n + 1;
+	int a, b, prod;
 
-	for (i = 0; i < j; i++)
+	for (a = 0; a <= n; a++)
 	{
-		for (k = 0; k < j; k++)
+		for (b = 0; b <= n; b++)
 		{
-			if (n > 15)
+			prod = a * b;
+			if (prod < 10 && b != n && b != 0)
 			{
-				break;
+				_putchar(' ');
+				_putchar(prod + '0');
+				_putchar(',');
+				_putchar(' ');
+			}
+			else if (prod >= 10 && b != n)
+			{
+				_putchar((prod / 10) + '0');
+				_putchar((prod % 10) + '0');
+				_putchar(',');
+				_putchar(' ');
+			}
+			else if (prod < 10 && b == n && b != 0)
+			{
+				_putchar(' ');
+				_putchar(prod + '0');
+			}
+			else if (b == 0)
+			{
+				_putchar('0' + prod);
+				_putchar(',');
+				_putchar(' ');
 			}
 			else
 			{
-				product = i * k;
-				if (k == 0)
-		       		{
-					_putchar('0' + product);
-				}
-				else if (product >= 10)
-				{
-					_putchar(' ');
-					_putchar('0' + (product / 10));
-					_putchar('0' +  (product % 10));
-				}
-				else if (product >= 100)
-				{
-					_putchar('0' + (product / 100));
-					_putchar('0' + ((product / 10) % 10));
-					_putchar('0' + (product % 10));
-				}
-				else
-				{
-					_putchar(' ');
-					_putchar(' ');
-					_putchar(product + '0');
-				}
-				if (k != n)
-				{
-					_putchar(',');
-				}
+				_putchar((prod / 10) + '0');
+				_putchar((prod % 10) + '0');
 			}
 		}
 		_putchar('\n');
