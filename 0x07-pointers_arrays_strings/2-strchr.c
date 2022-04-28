@@ -1,14 +1,21 @@
 #include "main.h"
 
 /**
-*_strchr - The main function locating a character in a string
-*@s: Thee destination pointer
-*@c: This the source character
-*Return:  resturns to the destination pointer
-*/
-char *_strchr(char *s, char c)
+ *_strncpy - a function that copies a string.
+ *@dest: pointer to destination string.
+ *@src: pointer to source string.
+ *@n: number of bytes to be used.
+ *
+ *Return: pointer to destination string.
+ */
+char *_strncpy(char *dest, char *src, int n)
 {
-char *ret = strchr(s, c);
+	int i;
 
-return (ret);
+	for (i = 0; i < n && src[i] != '\0'; i++)
+		dest[i] = src[i];
+		for (i = 0; i < n; i++)
+			dest[i] = '\0';
+
+	return (dest);
 }
