@@ -1,6 +1,13 @@
-#ifndef _3_FUNCTION_LIKE_MACRO_H_
-#define _3_FUNCTION_LIKE_MACRO_H_
+#include "1-pi.h"
+#include <stdio.h>
 
-#define ABS(x) ((x) < (0) ? (-x) : (x))
-
-#endif /*_3_FUNCTION_LIKE_MACRO_H_*/
+/**
+ * main - check the code for Holberton School students.
+ *
+ * Return: Always 0.
+ */
+int main(void)
+{
+	printf("%s\n", __FILE__);
+	return (0);
+}
